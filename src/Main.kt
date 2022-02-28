@@ -1,5 +1,6 @@
 import doublepointer.RotateList
 import doublepointer.SortedSquared
+import slidewindow.CheckInclusion
 
 fun main() {
 //    val solution = Solution()
@@ -56,7 +57,10 @@ fun main() {
 
 //    CenterValue().caculate(Integer.MAX_VALUE - 3, Integer.MAX_VALUE - 2)
 
-    val res = RotateList().rotate(intArrayOf(-1), 2)
+//    val res = RotateList().rotate(intArrayOf(-1), 2)
+
+    val checkInclusion = CheckInclusion().checkInclusion("hello","ooolleoooleh")
+    print(checkInclusion)
 }
 
 
