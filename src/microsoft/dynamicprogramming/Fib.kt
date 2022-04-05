@@ -1,4 +1,4 @@
-package microsoft.DynamicProgramming
+package microsoft.dynamicprogramming
 
 class Fib {
     /*
