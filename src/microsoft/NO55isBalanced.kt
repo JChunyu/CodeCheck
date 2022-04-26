@@ -28,8 +28,8 @@ class NO55isBalanced {
 
     private fun checkHeight(root: TreeNode?): Int {
         if (root == null) return 0
-        var leftHeight = checkHeight(root.left)
-        var rightHeight = checkHeight(root.right)
+        val leftHeight = checkHeight(root.left)
+        val rightHeight = checkHeight(root.right)
         return if (leftHeight == -1 || rightHeight == -1 || Math.abs(leftHeight - rightHeight) > 1) {
             -1
         } else {
