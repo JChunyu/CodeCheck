@@ -2,6 +2,28 @@ package microsoft.list
 
 import common.struct.ListNode
 
+class Solution {
+    fun reverse(head: ListNode?): ListNode? {
+        var node = head
+        var reverse: ListNode? = null
+        while (node != null) {
+            val temp = node.next
+            node.next = reverse
+            reverse = node
+            node = temp
+        }
+        return reverse
+    }
+}
+
+
+
+
+
+
+
+
+
 class ReverseList {
     fun reverseList(head: ListNode?): ListNode? {
         var node = head
