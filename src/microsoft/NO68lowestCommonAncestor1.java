@@ -2,7 +2,7 @@ package microsoft;
 
 import common.struct.TreeNode;
 
-public class NO68lowestCommonAncestor {
+public class NO68lowestCommonAncestor1 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
