@@ -1,4 +1,4 @@
-package java;
+package javatest;
 
 public class OutterJava {
     private void printOut() {
@@ -20,5 +20,6 @@ public class OutterJava {
         }
     }
 
+    private int max =  Integer.MAX_VALUE;
 }
 
