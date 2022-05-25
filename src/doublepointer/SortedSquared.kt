@@ -1,6 +1,6 @@
 package doublepointer
 /*
-* 977. 有序数组的平方
+* 977. 有序数组的平方排序
 *
 * 给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
 * 要求时间复杂度 n
@@ -66,15 +66,3 @@ class SortedSquared {
         return result
     }
 }
-
-
-//        val leftList = ArrayList<Int>()
-//        val rightList = ArrayList<Int>()
-//        for (i in 0..index) {
-//            leftList.add(nums[i] * nums[i])
-//        }
-//        leftList.reverse()
-//
-//        for (j in index until nums.size) {
-//            rightList.add(nums[j] + nums[j])
-//        }

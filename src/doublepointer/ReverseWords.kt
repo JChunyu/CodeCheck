@@ -4,13 +4,12 @@ import java.lang.StringBuilder
 
 
 /*
+* 反转英文句子
 * 思路 双指针
 * 1 检查字符串中 ' ' 为分界
 * 2 right指针先走，走到第一个 ' ' ， left 仍在初始位置。 然后反转 left - right 这段内容
 * 3 left = right，right 继续走到下一个空格
 * 4 重复 2 3， 直到 right = s.size
-*
-*
 * */
 class ReverseWords {
     fun reverseWords(s: String): String {

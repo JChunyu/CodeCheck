@@ -2,6 +2,9 @@ package node
 
 import common.struct.ListNode
 
+/*
+* 链表中删除指定值的节点
+* */
 class DeleteNode {
     fun deleteNode(head: ListNode?, `val`: Int): ListNode? {
         val fakerNode = ListNode(-1)
