@@ -1,4 +1,5 @@
-package binarysearch/*
+package binarysearch
+/*
 * 704. 二分查找
 * */
 class BinarySearch {

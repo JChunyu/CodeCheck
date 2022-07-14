@@ -1,4 +1,4 @@
-package java;
+package javatest;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -22,6 +22,7 @@ public class OutterJava {
         }
     }
 
+<<<<<<< HEAD:src/java/OutterJava.java
     public synchronized void testMethod() {
 
     }
@@ -30,5 +31,8 @@ public class OutterJava {
         AtomicInteger i = new AtomicInteger();
         i.incrementAndGet();
     }
+=======
+    private int max =  Integer.MAX_VALUE;
+>>>>>>> 104a8ff3bd810634a3565e75521348260b9dfbb2:src/javatest/OutterJava.java
 }
 

@@ -1,5 +1,7 @@
 package struct
 
+import common.struct.ListNode
+
 /*
 * 通过一个 temp 复制一份构造参数中的 node
 * 然后在用 prev 复制一份 temp
@@ -17,12 +19,12 @@ class KotlinNodeCheck {
         prev?.next = prev?.next?.next
 
         while (prev != null) {
-            println(prev.`val`)
+            println(prev.value)
             prev = prev.next
         }
         println("---------temp----------")
         while (temp != null) {
-            println(temp.`val`)
+            println(temp.value)
             temp = temp.next
         }
     }

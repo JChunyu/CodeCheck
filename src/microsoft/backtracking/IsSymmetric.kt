@@ -24,7 +24,7 @@ class IsSymmetric {
         return recur(root.left, root.right)
     }
 
-    fun recur(l: TreeNode?, r: TreeNode?): Boolean {
+    private fun recur(l: TreeNode?, r: TreeNode?): Boolean {
         if (l == null && r == null) return true
         if (l == null || r == null || l.`val` != r.`val`) return false
         return recur(l.left, r.right) && recur(l.right, r.left)

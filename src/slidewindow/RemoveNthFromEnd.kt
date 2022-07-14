@@ -2,7 +2,6 @@ package slidewindow
 
 import struct.ListNode
 
-
 class RemoveNthFromEnd {
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
         var node = head

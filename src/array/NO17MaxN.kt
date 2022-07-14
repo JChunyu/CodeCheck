@@ -10,7 +10,7 @@ class NO17MaxN {
         return array
     }
 
-    fun getMax(x: Int): Int {
+    private fun getMax(x: Int): Int {
         if (x == 1) return 1
         return getMax(x - 1) * 10
     }

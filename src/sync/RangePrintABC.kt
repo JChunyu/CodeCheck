@@ -13,9 +13,9 @@ class RangePrintABC {
     }
 
     fun run() {
-        var threadA = ThreadA()
-        var threadB = ThreadB()
-        var threadC = ThreadC()
+        val threadA = ThreadA()
+        val threadB = ThreadB()
+        val threadC = ThreadC()
         threadA.start()
         threadB.start()
         threadC.start()

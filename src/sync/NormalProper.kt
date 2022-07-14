@@ -7,13 +7,11 @@ class NormalProper {
 
     fun main() {
         val thread1 = Thread {
-//            value++
             a = value
             println(Thread.currentThread())
         }
         value++
         val thread2 = Thread {
-//            value--
             b = value
             println(Thread.currentThread())
         }
