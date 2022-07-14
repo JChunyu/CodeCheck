@@ -1,3 +1,5 @@
+package todo
+
 class MaxPartValueInArray {
     fun maxProfit(prices: IntArray): Int {
         // 1. 确定状态
