@@ -1,5 +1,7 @@
 package java;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class OutterJava {
     private void printOut() {
         System.out.println("AAA");
@@ -20,5 +22,13 @@ public class OutterJava {
         }
     }
 
+    public synchronized void testMethod() {
+
+    }
+
+    public void atomic() {
+        AtomicInteger i = new AtomicInteger();
+        i.incrementAndGet();
+    }
 }
 

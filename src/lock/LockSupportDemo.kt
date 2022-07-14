@@ -1,0 +1,4 @@
+package lock
+
+class LockSupportDemo {
+}
