@@ -1,6 +1,7 @@
 package microsoft.list
 
-import struct.ListNode
+import common.struct.ListNode
+
 
 class MergeTwoList {
     fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
@@ -13,7 +14,7 @@ class MergeTwoList {
         var b = l2
         res.next = a
         while (a != null && b != null) {
-            if (a.`val` < b.`val`) {
+            if (a.value < b.value) {
                 head = a
                 a = a.next
             } else {

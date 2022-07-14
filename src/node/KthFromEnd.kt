@@ -1,6 +1,7 @@
 package node
 
-import struct.ListNode
+import common.struct.ListNode
+
 
 class KthFromEnd {
     fun getKthFromEnd(head: ListNode?, k: Int): ListNode? {

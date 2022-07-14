@@ -1,6 +1,6 @@
 package microsoft.list
 
-import struct.ListNode
+import common.struct.ListNode
 
 
 class NO25MergeTwoList {
@@ -12,7 +12,7 @@ class NO25MergeTwoList {
         var last: ListNode? = null
 
         while (n1 != null && n2 != null) {
-            if (n1.`val` >= n2.`val`) {
+            if (n1.value >= n2.value) {
                 current?.next = n2
                 n2 = n2.next
             } else {

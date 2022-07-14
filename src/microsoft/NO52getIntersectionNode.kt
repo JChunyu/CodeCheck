@@ -1,6 +1,6 @@
 package microsoft
 
-import struct.ListNode
+import common.struct.ListNode
 
 class NO52getIntersectionNode {
     fun getIntersectionNode(headA: ListNode?, headB: ListNode?): ListNode? {

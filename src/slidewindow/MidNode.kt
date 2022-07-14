@@ -1,6 +1,7 @@
 package slidewindow
 
-import struct.ListNode
+import common.struct.ListNode
+
 
 class MidNode {
     fun middleNode(head: ListNode?): ListNode? {

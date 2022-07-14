@@ -1,6 +1,6 @@
 package microsoft
 
-import struct.ListNode
+import common.struct.ListNode
 
 
 class NO62lastRemaining {
@@ -46,7 +46,7 @@ class NO62lastRemaining {
             prev?.next = prev?.next?.next
             point = prev?.next
         }
-        return point?.`val` ?: 0
+        return point?.value ?: 0
     }
 }
 
