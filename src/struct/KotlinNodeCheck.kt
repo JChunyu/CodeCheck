@@ -1,9 +1,9 @@
 package struct
 
-import common.struct.ListNode
+import common.ListNode
 
 /*
-* 通过一个 temp 复制一份构造参数中的 node
+* 通过一个 temp 复制一份构造参数中的 solution.node
 * 然后在用 prev 复制一份 temp
 * prev 增删操作，实际上是 temp 上的内容
 *
