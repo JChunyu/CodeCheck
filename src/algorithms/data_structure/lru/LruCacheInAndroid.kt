@@ -1,4 +1,4 @@
-package algorithms.structure.lru
+package algorithms.data_structure.lru
 
 import java.lang.Exception
 

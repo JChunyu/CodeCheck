@@ -1,4 +1,4 @@
-package algorithms.structure.lru
+package algorithms.data_structure.lru
 
 class LruCacheByLinkedHashMap(val capacity: Int): LinkedHashMap<Int, Int>(capacity, 0.75f, true) {
 
