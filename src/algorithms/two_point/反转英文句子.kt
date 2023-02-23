@@ -1,7 +1,6 @@
-package solution.doublepointer
+package algorithms.two_point
 
 import java.lang.StringBuilder
-
 
 /*
 * 反转英文句子
@@ -13,7 +12,45 @@ import java.lang.StringBuilder
 * */
 class ReverseWords {
     fun reverseWords(s: String): String {
-        var charArray = s.toCharArray()
+        val result = StringBuilder()
+        var left = 0
+        var right = 0
+
+        while (right < s.length) {
+            val cur = s[right]
+            if (right == s.length - 1) {
+                if (s[right] == ' ') {
+                    // 反转left - right 这段内容
+                    val word = s.substring(left, right)
+                    result.append(word.reversed())
+                    left = ++right
+                } else {
+                    // 反转left - right 这段内容
+                    val word = s.substring(left, right + 1)
+                    result.append(word.reversed())
+                    break
+                }
+            }
+            if (cur == ' ') {
+                // 反转left - right 这段内容
+                val word = s.substring(left, right)
+                result.append(word.reversed())
+                result.append(' ')
+                left = ++right
+            } else {
+                right++
+            }
+        }
+        return result.toString()
+    }
+}
+
+fun main() {
+    println("\"" + ReverseWords().reverseWords("hello ndna ") + "\"" )
+}
+
+/*
+var charArray = s.toCharArray()
         var reverseIndex = charArray.size - 1
         var result = CharArray(charArray.size + 1)
         result[0] = ' '
@@ -44,31 +81,4 @@ class ReverseWords {
             stingBuilder.append(realResult[i])
         }
         return stingBuilder.toString()
-    }
-}
-
-/*
-    public String reverseWords(String s) {
-        if (s.length() == 0) return "";
-        StringBuilder stringBuilder = new StringBuilder();
-        int start = 0;
-
-        while (start < s.length()) {
-            if (s.charAt(start) == ' ') {
-                stringBuilder.append(' ');
-                start++;
-                continue;
-            } else {
-                int end = start;
-                StringBuilder temp = new StringBuilder();
-                while (end < s.length() && s.charAt(end) != ' ') {
-                    temp.append(s.charAt(end));
-                    end++;
-                }
-                stringBuilder.append(temp.reverse());
-                start = end;
-            }
-        }
-        return stringBuilder.toString();
-    }
 * */

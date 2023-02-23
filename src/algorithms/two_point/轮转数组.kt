@@ -1,4 +1,4 @@
-package algorithms.double_point
+package algorithms.two_point
 
 /*
 * 189.轮转数组

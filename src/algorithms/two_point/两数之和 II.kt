@@ -1,8 +1,9 @@
-package solution.doublepointer
+package algorithms.two_point
+
 
 /*
 * 167 两数之和-输入有序数组
-* - 下标从1开始的整数数组numbers，已按 非递减 顺序排列 （意思是：递增序排列，但是并非单调递增（因为有重复的元素））
+* - 下标从 1 开始的整数数组 numbers，已按 非递减 顺序排列 （意思是：递增序排列，但是并非单调递增（因为有重复的元素））
 * - 从数组中找出相加之和等于target的两个数，以数组的形式返回两数的index。
 * - 假设每个输入只对应一个标准答案，而且不可以重复使用相同的元素。
 * - 解决方案必须只使用常量级的额外空间。：常数级别的额外空间就是O(1)，即要求空间复杂度是 O(1)，即算法所消耗的内存空间 **不随被处理数据量 变化、或递归深度增减而改变。**
@@ -20,21 +21,22 @@ package solution.doublepointer
 *   3. target > numbers[0] && target < numbers[size - 1]
 *      这种情况可以先找出numbers中与target最接近，并且小于target的元素的index，然后采用情况2的步骤即可。
 * */
-class TwoSumII {
+class TwoNumberSum2 {
     fun twoSum(numbers: IntArray, target: Int): IntArray {
+        if (target > numbers[numbers.size - 1] && target < numbers[0]) return IntArray(2)
         var left = 0
         var right = numbers.size - 1
         while (left < right) {
             val sum = numbers[left] + numbers[right]
-            if (sum > target) {
-                right--
-                continue
-            }
-            if (sum < target) {
+            if (target > sum) {
                 left++
                 continue
             }
-            if (sum == target) {
+            if (target < sum) {
+                right--
+                continue
+            }
+            if (target == sum) {
                 return intArrayOf(left + 1, right + 1)
             }
         }

@@ -1,4 +1,4 @@
-package solution.doublepointer
+package algorithms.two_point
 
 /*
 * 三数之和

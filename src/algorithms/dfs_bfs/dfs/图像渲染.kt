@@ -1,33 +1,38 @@
-package solution.dfs_bfs
+package algorithms.dfs_bfs.dfs
 
 import java.util.*
 
-class FloodFill {
-    // 右，下，上，左
-    var dx = intArrayOf(1, 0, 0, -1)
-    var dy = intArrayOf(0, 1, -1, 0)
-
-    fun floodFill(image: Array<IntArray>, sr: Int, sc: Int, newColor: Int): Array<IntArray> {
-        val currColor = image[sr][sc]
-        if (currColor != newColor) {
-//            dfs(image, sr, sc, currColor, newColor);
-            bfs(image, sr, sc, currColor, newColor)
+class Solution {
+    fun floodFill(image: Array<IntArray>, sr: Int, sc: Int, color: Int): Array<IntArray> {
+        val rows = image.size
+        val columns = image[0].size
+        if (sr < 0 || sr >= rows) return image
+        if (sc < 0 || sc >= columns) return image
+        val current = image[sr][sc]
+        if (current != color) {
+            dfs(image, sr, sc, current, color)
         }
         return image
     }
 
-    // 深度优先
-    private fun dfs(image: Array<IntArray>, x: Int, y: Int, color: Int, newColor: Int) {
-        if (x >= 0 && x < image.size && y >= 0 && y < image[0].size) {
-            if (image[x][y] == color) {
-                image[x][y] = newColor
-                dfs(image, x + 1, y, color, newColor)
-                dfs(image, x ,y + 1, color, newColor)
-                dfs(image, x - 1, y, color, newColor)
-                dfs(image, x, y - 1, color, newColor)
+    fun dfs(image: Array<IntArray>, x: Int, y: Int, oldColor: Int, color: Int) {
+        val rows = image.size
+        val columns = image[0].size
+        // 坐标点在二维数组范围内
+        if (x in 0 until rows && y in 0 until columns) {
+            if (image[x][y] == oldColor) {
+                image[x][y] = color
+                dfs(image, x - 1, y, oldColor, color)
+                dfs(image, x + 1, y, oldColor, color)
+                dfs(image, x, y - 1, oldColor, color)
+                dfs(image, x, y + 1, oldColor, color)
             }
         }
     }
+
+    // 右，下，上，左
+    var dx = intArrayOf(1, 0, 0, -1)
+    var dy = intArrayOf(0, 1, -1, 0)
 
     private fun dfs2(image: Array<IntArray>, x: Int, y: Int, color: Int, newColor: Int) {
         if (image[x][y] == color) {
@@ -66,5 +71,4 @@ class FloodFill {
             }
         }
     }
-    // 广度优先
 }

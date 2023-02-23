@@ -1,12 +1,7 @@
-package solution.doublepointer
+package algorithms.two_point
 
-/*
-* 反转字符串
-* 思路
-* 1. 直接用双指针，left 和 right 值互换
-* */
 class ReverseString {
-    fun reverseString(s: CharArray): Unit {
+    fun reverseString(s: CharArray) {
         var left = 0
         var right = s.size - 1
         while (left < right) {
