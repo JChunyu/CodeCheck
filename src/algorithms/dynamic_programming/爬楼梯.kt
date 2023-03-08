@@ -1,8 +1,13 @@
-package solution.todo/*
-*
-* */
-class ClimbingStairs {
+package algorithms.dynamic_programming
+
+class ClimbStairs {
     fun climbStairs(n: Int): Int {
+        if (n == 1) return 1
+        if (n == 2) return 2
+        return climbStairs(n - 1) + climbStairs(n - 2)
+    }
+
+    fun climbStairs2(n: Int): Int {
         var before = 0
         var prev = 0
         var current = 1
@@ -15,13 +20,4 @@ class ClimbingStairs {
         return current
     }
 
-    fun climbStairs2(n: Int): Int {
-        if (n == 1) {
-            return 1
-        }
-        if (n == 2) {
-            return 2
-        }
-        return climbStairs2(n - 1) + climbStairs2(n - 2)
-    }
 }
