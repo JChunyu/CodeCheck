@@ -17,17 +17,17 @@ f(amount) = f(amount - x) + if (coins.contains(x)) 1 else { f(x) }
 * */
 
 class CoinChangeSolution {
-    fun coinChange(coins: IntArray, amount: Int): Int {
-        val dp = IntArray(amount + 1)
-        for (i in 1..amount) {
-            for (j in i - 1  downTo 1) {
-                dp[i] = min(f)
-            }
-        }
-        return if (dp[amount] == 0) -1 else dp[amount]
-    }
+//    fun coinChange(coins: IntArray, amount: Int): Int {
+//        val dp = IntArray(amount + 1)
+//        for (i in 1..amount) {
+//            for (j in i - 1  downTo 1) {
+//                dp[i] = min(f)
+//            }
+//        }
+//        return if (dp[amount] == 0) -1 else dp[amount]
+//    }
 }
 
-fun main() {
-    println(CoinChangeSolution().coinChange(intArrayOf(1, 5, 10), 11))
-}
+//fun main() {
+//    println(CoinChangeSolution().coinChange(intArrayOf(1, 5, 10), 11))
+//}
