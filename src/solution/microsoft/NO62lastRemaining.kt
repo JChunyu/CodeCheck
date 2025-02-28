@@ -46,7 +46,7 @@ class NO62lastRemaining {
             prev?.next = prev?.next?.next
             point = prev?.next
         }
-        return point?.value ?: 0
+        return point?.`val` ?: 0
     }
 }
 

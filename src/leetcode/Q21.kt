@@ -1,6 +1,7 @@
 package leetcode
 
-import algorithms.data_structure.linked_list.ListNode
+import common.ListNode
+
 // -9, 3
 // 5, 7
 // p -9.3.

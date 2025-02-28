@@ -1,6 +1,6 @@
 package leetcode
 
-import algorithms.data_structure.linked_list.ListNode
+import common.ListNode
 
 
 /*

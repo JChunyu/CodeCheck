@@ -36,10 +36,10 @@ class CopyRandomList {
             return null
         }
         if (!map.containsKey(head)) {
-            val node = ListNode(head.value)
+            val node = ListNode(head.`val`)
             map[head] = node
             node.next = copyRandomList(head.next)
-            node.random = copyRandomList(head.random)
+//            node.random = copyRandomList(head.random)
         }
         return map[head]
     }
@@ -59,7 +59,7 @@ fun main() {
     var a = CopyRandomList().copyRandomList(node1)
 
     while (a != null) {
-        println(a.value)
+        println(a.`val`)
         a = a.next
     }
 }
