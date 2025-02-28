@@ -332,6 +332,47 @@ class ListNodeProj {
         beforeLastCursor?.next = after.next
         return before.next
     }
+
+    /*
+    * 92. 反转链表 II
+    * 需要注意不能直接返回 head，需要用一个 ans 假节点，因为 head 内部的节点有断裂操作
+    * */
+    fun reverseBetween(head: ListNode?, left: Int, right: Int): ListNode? {
+        if (head == null) return null
+        if (right <= left) {
+            return head
+        }
+        val ans = ListNode(-1)
+        var prev: ListNode? = ans
+        prev?.next = head
+        var curr: ListNode? = head
+
+        var reverse: ListNode? = ListNode(-1)
+        var reverseLast: ListNode? = null
+
+        var i = 1
+        while (i < left) {
+            curr = curr?.next
+            prev = prev?.next
+            i++
+        }
+        for (i in left..right) {
+            val temp = curr
+            curr = curr?.next
+
+            temp?.next = null
+            if (reverse?.next == null) {
+                reverseLast = temp
+            }
+            val reverseNext = reverse?.next
+            temp?.next = reverseNext
+            reverse?.next = temp
+        }
+        prev?.next = reverse?.next
+        reverseLast?.next = curr
+        // 左侧的再走
+        return ans.next
+    }
 }
 
 fun main() {
@@ -365,12 +406,12 @@ fun main() {
 
 
     node1.next = node2
-    node2.next = node3
-    node3.next = node4
-    node4.next = node5
-    node5.next = null
+//    node2.next = node3
+//    node3.next = node4
+//    node4.next = node5
+//    node5.next = null
 
-    var res = listNodeProj.partition(node1, 2)
+    var res = listNodeProj.reverseBetween(node1, 1, 2)
     while (res != null) {
         println(res.`val`)
         res = res.next
