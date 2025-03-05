@@ -15,7 +15,7 @@ class StringProj {
         hashMap.put('D', 500)
         hashMap.put('M', 1000)
 
-        
+        return 0
     }
 
     /*
