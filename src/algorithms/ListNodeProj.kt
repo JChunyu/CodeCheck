@@ -1,7 +1,6 @@
-package algorithms.list_node
+package algorithms
 
 import common.ListNode
-import kotlin.math.min
 
 
 class ListNodeProj {
