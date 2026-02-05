@@ -1,3 +1,4 @@
+import java.util.concurrent.locks.ReentrantLock
 import kotlin.concurrent.thread
 
 /*
@@ -32,4 +33,42 @@ fun main() {
     // 不调用也不会立即结束，这是因为，即使 main 函数的代码执行完毕了（也就是到达了 fun main() { ... } 的末尾），Java 虚拟机 (JVM) 默认情况下会等待所有的 非守护线程 (non-daemon threads) 执行完毕后才会退出。
     thread1.join()
     thread2.join()
+}
+
+
+fun dieLock() {
+    val lockA = ReentrantLock()
+    val lockB = ReentrantLock()
+    val t1 = Thread {
+        lockA.lock()
+        try {
+            Thread.sleep(100)
+            lockB.lock()
+            try {
+                println("t1 done")
+            } finally {
+                lockB.unlock()
+            }
+        } finally {
+
+        }
+    }
+
+    val t2 = Thread {
+        lockB.lock()
+        try {
+            Thread.sleep(100)
+            lockA.lock()
+            try {
+                println("t2 done")
+            } finally {
+                lockA.unlock()
+            }
+        } finally {
+            lockB.unlock()
+        }
+    }
+
+    t1.start()
+    t2.start()
 }
