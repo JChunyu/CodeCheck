@@ -46,7 +46,7 @@ class Q18 {
         return result
     }
 
-    fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
+    fun fourSum2(nums: IntArray, target: Int): List<List<Int>> {
         nums.sort()
         return loopAndWhen(nums, target)
     }
@@ -57,7 +57,6 @@ class Q18 {
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue
             }
-
 
             for (j in i + 1 until nums.size - 2) {
                 var m: Int = j + 1
@@ -190,6 +189,50 @@ class Q18 {
             j--
         }
         return result
+    }
+
+    /*
+    * 给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。
+    * 请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）：
+    * 0 <= a, b, c, d < n
+    * a、b、c 和 d 互不相同
+    * nums[a] + nums[b] + nums[c] + nums[d] == target
+    * */
+
+
+    fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
+        val res = arrayListOf<List<Int>>()
+        if (nums.size < 4) return res
+        // 排序
+        nums.sort()
+        val size = nums.size
+        // 从 index = 0 开始推进，直到 size - 3，实际上 a 到达的最大值是 size - 4，给 bcd 留下空间
+        for (a in 0 until size - 3) {
+            // a 去重
+            if (a > 0 && nums[a] == nums[a - 1]) continue
+            // b 从 a + 1 开始推进，直到 size - 2，实际上 b 到达的最大值是 size - 3，给 cd 留下空间
+            for (b in a + 1 until size - 2) {
+                // b 去重
+                if (b > a + 1 && nums[b] == nums[b - 1]) continue
+                var c = b + 1
+                var d = size - 1
+                while (c < d) {
+                    val sum = nums[a].toLong() + nums[b].toLong() + nums[c].toLong() + nums[d].toLong()
+                    when {
+                        sum < target -> c++
+                        sum > target -> d--
+                        else -> {
+                            res.add(listOf(nums[a], nums[b], nums[c], nums[d]))
+                            while (c < d && nums[c] == nums[c + 1]) c++
+                            while (c < d && nums[d] == nums[d - 1]) d--
+                            c++
+                            d--
+                        }
+                    }
+                }
+            }
+        }
+        return res
     }
 }
 
