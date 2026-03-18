@@ -19,12 +19,12 @@ class KotlinNodeCheck {
         prev?.next = prev?.next?.next
 
         while (prev != null) {
-            println(prev.value)
+            println(prev.`val`)
             prev = prev.next
         }
         println("---------temp----------")
         while (temp != null) {
-            println(temp.value)
+            println(temp.`val`)
             temp = temp.next
         }
     }

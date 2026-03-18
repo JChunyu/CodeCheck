@@ -15,6 +15,9 @@ class NO27MatrixPrint {
         // 数组总数量
         var size = row * column
         val res = ArrayList<Int>()
+        val listIterator = res.listIterator()
+
+
         // 四个方向
         val UP = 1
         val DOWN = 2

@@ -4,7 +4,7 @@ import java.util.Stack
 
 
 /**
- * 包含 min 函数的湛
+ * 包含 min 函数的栈
  * Your MinStack object will be instantiated and called as such:
  * var obj = MinStack()
  * obj.push(x)

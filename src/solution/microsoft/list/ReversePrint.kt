@@ -26,7 +26,7 @@ class ReversePrint {
 
         var i = 0
         while (reverse != null) {
-            intArray[i] = reverse.value
+            intArray[i] = reverse.`val`
             reverse = reverse.next
             i++
         }

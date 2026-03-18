@@ -11,7 +11,7 @@ class DeleteNode {
         fakerNode.next = head
         var temp: ListNode? = fakerNode
         while (temp?.next != null) {
-            if (temp.next?.value == `val`) {
+            if (temp.next?.`val` == `val`) {
                 temp.next = temp.next?.next
             } else {
                 temp = temp.next
